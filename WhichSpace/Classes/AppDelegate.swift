@@ -21,7 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, SUUpdaterDel
 
     let spacesMonitorFile = "~/Library/Preferences/com.apple.spaces.plist"
 
-    let statusBarItem = NSStatusBar.system().statusItem(withLength: 27)
+    let statusBarItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
     let conn = _CGSDefaultConnection()
 
     static var darkModeEnabled = false
@@ -52,7 +52,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, SUUpdaterDel
     fileprivate func configureMenuBarIcon() {
         updateDarkModeStatus()
         statusBarItem.button?.cell = StatusItemCell()
-        statusBarItem.image = NSImage(named: "default") // This icon appears when switching spaces when cell length is variable width.
+        //statusBarItem.image = NSImage(named: "default") // This icon appears when switching spaces when cell length is variable width.
         statusBarItem.menu = statusMenu
     }
 
@@ -117,7 +117,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, SUUpdaterDel
             let spaceID = (space as! NSDictionary)["ManagedSpaceID"] as! Int
             let spaceNumber = index + 1
             if spaceID == activeSpaceID {
-                statusBarItem.button?.title = String("\(spaceNumber)")
+                statusBarItem.button?.title = String("SPACE \(spaceNumber)")
                 return
             }
         }

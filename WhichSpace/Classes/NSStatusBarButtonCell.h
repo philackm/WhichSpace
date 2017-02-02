@@ -31,7 +31,7 @@
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (long long)_stateForDrawing;
 - (BOOL)_isExitFullScreenButton;
-- (struct CGRect)drawTitle:(id)arg1 withFrame:(struct CGRect)arg2 inView:(id)arg3;
+- (struct CGRect)drawTitle:(id)titleString withFrame:(struct CGRect)frame inView:(id)controlView;
 - (long long)interiorBackgroundStyle;
 - (BOOL)acceptsFirstResponder;
 - (void)setDoubleAction:(SEL)arg1;
